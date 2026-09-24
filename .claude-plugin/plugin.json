@@ -1,0 +1,4 @@
+{
+  "name": "hubspot-apollo-agent",
+  "description": "Permet de récollecter les informations d'un prospect et les stocker dans Hubspot."
+}
