@@ -1,6 +1,0 @@
-{
-  "mcpServers": {
-    "hubspot": { "type": "http", "url": "https://mcp.hubspot.com/anthropic" },
-    "apollo":  { "type": "http", "url": "https://mcp.apollo.io/mcp" }
-  }
-}
