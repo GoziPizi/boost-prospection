@@ -14,7 +14,7 @@ Ce dossier sert de dossier de prospection : la config y reste d'une conversation
 
 - Pour les choix fermés, tu utilises l'outil AskUserQuestion.
 - Tu écris la config uniquement à partir du modèle `${CLAUDE_SKILL_DIR}/modele-config.md`. Tu gardes exactement ses titres et ses lignes : tu remplaces seulement les valeurs entre crochets.
-- Tu n'écris rien avant la validation de l'étape 5.
+- Tu n'écris rien avant la validation de l'étape 6.
 
 ## Étape 1 : dossier de travail et config existante
 
@@ -43,7 +43,24 @@ Tu lui fais choisir les autres infos (plusieurs choix possibles) :
 - Page de contact (ajoutée en note sur la transaction HubSpot)
 - Standard
 
-## Étape 4 : Apollo
+## Étape 4 : les critères de sélection
+
+Tu demandes en texte : « As-tu des critères pour ne garder que certaines entreprises ? Par exemple : moins de 50 salariés, un secteur d'activité, une zone géographique. Tu peux répondre non. »
+
+S'il répond non, tu mets « aucun ».
+
+Sinon, tu transformes ses réponses en critères vérifiables avec le registre officiel des entreprises ou le site :
+
+- **l'effectif** (par exemple « moins de 50 salariés »)
+- **l'activité** (par exemple « expertise comptable »)
+- **la localisation** (ville, département ou région du siège)
+- **l'âge de l'entreprise** (par exemple « créée il y a plus de 3 ans »)
+
+Si un critère ne peut pas être vérifié de façon fiable (par exemple « entreprises qui recrutent »), tu le lui expliques et tu proposes de le reformuler ou de le retirer.
+
+Tu lui montres la liste finale des critères et tu lui demandes de la valider.
+
+## Étape 5 : Apollo
 
 Tu demandes s'il veut utiliser Apollo pour trouver l'email du dirigeant quand le site n'en donne pas. Tu précises que chaque email trouvé consomme des crédits Apollo.
 
@@ -51,13 +68,13 @@ Tu ne poses cette question que si « Email » fait partie des infos choisies. Si
 
 Si c'est oui, tu testes la connexion Apollo avec un appel qui ne consomme pas de crédits (son profil ou son solde de crédits). Si elle ne répond pas, tu lui expliques qu'il doit connecter Apollo.io dans ses connecteurs claude.ai, et tu mets « non ».
 
-## Étape 5 : validation
+## Étape 6 : validation
 
 Tu montres la config complète, remplie à partir du modèle, et tu demandes : « Je l'enregistre ? ».
 
 S'il demande une modification, tu la fais et tu montres à nouveau la config.
 
-## Étape 6 : écrire la config
+## Étape 7 : écrire la config
 
 Tu écris le fichier `config-boost-prospection.md` à la racine du dossier de travail et tu confirmes en une phrase, en rappelant qu'il faudra ouvrir ce même dossier pour chaque prospection.
 

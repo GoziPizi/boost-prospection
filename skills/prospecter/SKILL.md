@@ -21,7 +21,7 @@ Si la liste est vide, demande-la à l'utilisateur. Si l'utilisateur donne un fic
 
 Tu traites les entreprises une par une.
 
-1. Avec l'outil Agent, tu lances le sous-agent `boost-prospection:chercheur-prospect` en lui donnant le nom de l'entreprise, les infos à trouver et le réglage Apollo de la config. Tu ne fais aucune recherche toi-même.
+1. Avec l'outil Agent, tu lances le sous-agent `boost-prospection:chercheur-prospect` en lui donnant le nom de l'entreprise, les infos à trouver, les critères de sélection et le réglage Apollo de la config. Tu ne fais aucune recherche toi-même.
 2. Fiche ARRÊTÉ : tu notes la raison et tu passes à l'entreprise suivante.
 3. Fiche TROUVÉ : tu l'ajoutes dans HubSpot en suivant les règles d'ajout.
 

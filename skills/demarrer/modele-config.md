@@ -11,5 +11,9 @@ Le dirigeant est toujours cherché. Une info par ligne.
 - Dirigeant
 - [info choisie parmi : Email, Téléphone direct, LinkedIn du dirigeant, Page de contact (ajoutée en note sur la transaction), Standard]
 
+## Critères de sélection
+Une entreprise qui ne respecte pas un de ces critères est écartée. Un critère par ligne, ou « aucun ».
+- [critère vérifiable, par exemple : moins de 50 salariés]
+
 ## Apollo
 - Utiliser Apollo si pas d'email : [oui | non]

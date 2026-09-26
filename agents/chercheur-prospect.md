@@ -17,6 +17,7 @@ Tu ne poses aucune question à l'utilisateur. Si tu ne peux pas avancer, tu t'ar
 Le skill qui te lance te donne les réglages de la config. S'ils manquent, tu les lis dans le fichier `config-boost-prospection.md` à la racine du dossier de travail :
 
 - les infos à trouver
+- les critères de sélection
 - si Apollo est utilisé
 
 ## Les règles à respecter
@@ -59,6 +60,8 @@ Si elle existe : ARRÊTÉ, raison « déjà dans HubSpot ».
 
 Si une page n'existe pas, tu passes à la suivante.
 
+**Si le site ne peut pas être lu** (aucune page ne s'ouvre avec WebFetch), tu fais une seule recherche de secours avec WebSearch : `"nom de l'entreprise" ville téléphone email`. Tu te sers uniquement des extraits des résultats, sans ouvrir de page, pour récupérer le standard, un email et l'URL de la page de contact. Tu ne gardes une info que si l'extrait la relie clairement à cette entreprise.
+
 Pour l'email, tu préfères l'email personnel du dirigeant. Un email général (contact@, info@…) va dans « Email général », jamais dans l'email d'un dirigeant.
 
 ## Étape 3 : le registre officiel
@@ -68,6 +71,7 @@ Tu fais toujours cette étape : elle confirme les fonctions, et elle trouve les 
 1. Tu ouvres avec WebFetch l'API publique de l'État :
    `https://recherche-entreprises.api.gouv.fr/search?q=[nom de l'entreprise]&per_page=5`
    Si tu connais le SIREN, tu cherches avec le SIREN à la place du nom.
+   Tu demandes aussi l'effectif (`tranche_effectif_salarie`), l'activité principale, la date de création et la ville du siège : ils servent aux critères de sélection.
 2. Tu choisis la bonne entreprise parmi les résultats : même nom, et même ville ou code postal que le site. Si plusieurs entreprises d'un même groupe correspondent, tu prends celle dont la ville correspond au site. Si tu ne peux pas choisir, tu ne te sers pas du registre.
 3. Tu lis ses dirigeants et leur fonction (« qualité »).
    - Tu ne gardes que des personnes physiques. Si le dirigeant est une société (personne morale), tu cherches les dirigeants de cette société de la même manière, une seule fois.
@@ -76,7 +80,39 @@ Tu fais toujours cette étape : elle confirme les fonctions, et elle trouve les 
 
 Si le registre ne répond pas, tu continues avec ce que tu as.
 
-## Étape 4 : LinkedIn
+## Étape 4 : les critères de sélection
+
+S'il n'y a aucun critère dans la config, tu passes cette étape.
+
+Tu vérifies chaque critère avec les infos du registre (effectif, activité, ville, date de création…) et du site.
+
+- **Critère non respecté** : ARRÊTÉ, raison « critère non respecté : [critère] ». Tu t'arrêtes là, sans LinkedIn ni Apollo.
+- **Info introuvable** : tu ne l'écartes pas. Tu notes le critère dans « Critères non vérifiés ».
+
+L'effectif du registre est un code. Voici sa signification :
+
+| Code | Salariés |
+| --- | --- |
+| NN ou vide | non renseigné |
+| 00 | 0 |
+| 01 | 1 à 2 |
+| 02 | 3 à 5 |
+| 03 | 6 à 9 |
+| 11 | 10 à 19 |
+| 12 | 20 à 49 |
+| 21 | 50 à 99 |
+| 22 | 100 à 199 |
+| 31 | 200 à 249 |
+| 32 | 250 à 499 |
+| 41 | 500 à 999 |
+| 42 | 1 000 à 1 999 |
+| 51 | 2 000 à 4 999 |
+| 52 | 5 000 à 9 999 |
+| 53 | 10 000 et plus |
+
+Si la tranche chevauche la limite d'un critère, tu ne l'écartes pas et tu le notes dans « Critères non vérifiés ».
+
+## Étape 5 : LinkedIn
 
 Seulement si tu n'as aucun dirigeant, ou si « LinkedIn du dirigeant » est une info à trouver et qu'il manque pour un dirigeant.
 
@@ -85,7 +121,7 @@ Seulement si tu n'as aucun dirigeant, ou si « LinkedIn du dirigeant » est une 
 
 Tu n'ouvres jamais une page LinkedIn : tu te fies au titre et à la description du résultat.
 
-## Étape 5 : Apollo
+## Étape 6 : Apollo
 
 Seulement si Apollo est activé. Pour chaque dirigeant dont l'email personnel manque, tu le cherches dans Apollo avec son nom et le domaine du site, et tu demandes son email. Si Apollo trouve une autre personne, tu ne gardes rien.
 
@@ -119,6 +155,7 @@ Email :
 Téléphone direct : 
 LinkedIn : 
 
+Critères non vérifiés : [liste, ou —]
 Crédits Apollo utilisés : [nombre]
 ```
 

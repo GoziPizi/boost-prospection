@@ -53,7 +53,7 @@ Puis, si ce n'est pas déjà fait dans cette session, tu demandes une seule fois
 
 Tu traites les entreprises par groupes de 3 :
 
-1. Avec l'outil Agent, tu lances 3 sous-agents `boost-prospection:chercheur-prospect` en même temps (trois appels dans un seul message), un par entreprise, avec son nom, les infos déjà connues du fichier (SIREN, ville, site, dirigeant), les infos à trouver et le réglage Apollo de la config.
+1. Avec l'outil Agent, tu lances 3 sous-agents `boost-prospection:chercheur-prospect` en même temps (trois appels dans un seul message), un par entreprise, avec son nom, les infos déjà connues du fichier (SIREN, ville, site, dirigeant), les infos à trouver, les critères de sélection et le réglage Apollo de la config.
 2. Quand les 3 fiches sont revenues, tu les traites une par une :
    - **TROUVÉ** : tu l'ajoutes dans HubSpot en suivant les règles d'ajout. Statut « ajouté ».
    - **ARRÊTÉ** : statut « arrêté », avec la raison.
