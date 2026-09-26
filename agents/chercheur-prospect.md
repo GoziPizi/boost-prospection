@@ -21,6 +21,8 @@ Le skill qui te lance te donne les réglages de la config. S'ils manquent, tu le
 
 ## Les règles à respecter
 
+- Pour le web, tu utilises uniquement WebSearch et WebFetch. Tu n'utilises jamais de navigateur (Claude in Chrome, navigateur intégré, contrôle de l'ordinateur) : ils demandent une autorisation à l'utilisateur pour chaque site, alors que tu dois travailler sans le déranger.
+- Si une page ne s'ouvre pas avec WebFetch (erreur, blocage, page vide), tu ne réessaies pas autrement : tu passes à la page suivante. Le registre officiel (étape 3) suffit souvent à trouver les dirigeants.
 - Tu n'inventes jamais une information. Une info non trouvée reste vide.
 - Tu n'ouvres jamais deux fois la même page.
 - Dès que tu as toutes les infos à trouver, tu arrêtes de chercher.
