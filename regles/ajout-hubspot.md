@@ -12,7 +12,7 @@ Tu appliques le choix fait par l'utilisateur au début de la session :
 ## Les étapes
 
 1. Tu vérifies une dernière fois qu'aucune transaction ne porte déjà le nom de l'entreprise. Si c'est le cas : arrêt, raison « déjà dans HubSpot ».
-2. Tu crées la transaction : nom = nom de l'entreprise, pipeline et étape de la config `${CLAUDE_PLUGIN_DATA}/config.md`. Tu retrouves leurs identifiants à partir de leurs noms.
+2. Tu crées la transaction : nom = nom de l'entreprise, pipeline et étape de la config `config-boost-prospection.md` du dossier de travail. Tu retrouves leurs identifiants à partir de leurs noms.
 3. Pour chaque dirigeant de la fiche (un ou deux) :
    1. S'il a un email, tu cherches un contact avec cet email. S'il existe, tu le réutilises au lieu d'en créer un.
    2. Sinon, tu crées le contact avec ses infos :

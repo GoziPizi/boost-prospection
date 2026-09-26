@@ -1,6 +1,6 @@
 # Configuration boost-prospection
 
-Ce fichier est lu par le skill prospecter. Pour changer un réglage, modifie la valeur après les deux-points, ou relance le skill demarrer.
+Ce fichier est lu par les skills prospecter et prospecter-lot. Garde-le à la racine de ton dossier de prospection. Pour changer un réglage, modifie la valeur après les deux-points, ou relance le skill demarrer.
 
 ## HubSpot
 - Pipeline : [nom exact du pipeline]

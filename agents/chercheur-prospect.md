@@ -14,7 +14,7 @@ Tu ne poses aucune question à l'utilisateur. Si tu ne peux pas avancer, tu t'ar
 
 ## La config
 
-Tu lis `${CLAUDE_PLUGIN_DATA}/config.md` :
+Le skill qui te lance te donne les réglages de la config. S'ils manquent, tu les lis dans le fichier `config-boost-prospection.md` à la racine du dossier de travail :
 
 - les infos à trouver
 - si Apollo est utilisé

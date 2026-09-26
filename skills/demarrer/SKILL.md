@@ -6,7 +6,9 @@ description: Configure le plugin boost-prospection en posant quelques questions 
 
 ## Ton objectif
 
-Tu poses quelques questions à l'utilisateur, tu testes les connexions, puis tu écris le fichier `${CLAUDE_PLUGIN_DATA}/config.md`.
+Tu poses quelques questions à l'utilisateur, tu testes les connexions, puis tu écris le fichier `config-boost-prospection.md` à la racine du dossier de travail (le dossier ouvert pour cette session).
+
+Ce dossier sert de dossier de prospection : la config y reste d'une conversation à l'autre, et les fichiers de suivi y seront rangés.
 
 ## Les règles à respecter
 
@@ -14,9 +16,11 @@ Tu poses quelques questions à l'utilisateur, tu testes les connexions, puis tu 
 - Tu écris la config uniquement à partir du modèle `${CLAUDE_SKILL_DIR}/modele-config.md`. Tu gardes exactement ses titres et ses lignes : tu remplaces seulement les valeurs entre crochets.
 - Tu n'écris rien avant la validation de l'étape 5.
 
-## Étape 1 : config existante ?
+## Étape 1 : dossier de travail et config existante
 
-Tu regardes si `${CLAUDE_PLUGIN_DATA}/config.md` existe.
+Si aucun dossier de travail n'est ouvert, tu expliques à l'utilisateur qu'il doit ouvrir son dossier de prospection (un dossier sur son ordinateur, par exemple « Prospection »), puis relancer la commande. Tu t'arrêtes là.
+
+Sinon, tu regardes si `config-boost-prospection.md` existe à la racine de ce dossier.
 
 - Elle n'existe pas : tu fais toutes les étapes.
 - Elle existe : tu la résumes en trois lignes et tu demandes ce que l'utilisateur veut modifier. Tu ne fais que les étapes concernées et tu gardes le reste.
@@ -55,6 +59,6 @@ S'il demande une modification, tu la fais et tu montres à nouveau la config.
 
 ## Étape 6 : écrire la config
 
-Tu écris le fichier `${CLAUDE_PLUGIN_DATA}/config.md` et tu confirmes en une phrase.
+Tu écris le fichier `config-boost-prospection.md` à la racine du dossier de travail et tu confirmes en une phrase, en rappelant qu'il faudra ouvrir ce même dossier pour chaque prospection.
 
 Si ce skill a été lancé par prospecter parce que la config manquait, tu le dis : prospecter reprend alors là où il en était.

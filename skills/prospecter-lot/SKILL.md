@@ -1,5 +1,5 @@
 ---
-description: Prospecte une liste d'entreprises à partir d'un fichier CSV (par exemple un export Pappers), avec un fichier de suivi qui permet de reprendre après une interruption. Pour quelques noms tapés à la main, utiliser prospecter.
+description: Prospecte une liste d'entreprises à partir d'un fichier CSV ou Excel (par exemple un export Pappers), avec un fichier de suivi qui permet de reprendre après une interruption. Pour quelques noms tapés à la main, utiliser prospecter.
 disable-model-invocation: true
 ---
 
@@ -7,11 +7,13 @@ disable-model-invocation: true
 
 Le fichier à traiter : $ARGUMENTS
 
-Si aucun fichier CSV n'est donné, demande à l'utilisateur de le glisser dans la conversation.
+Le fichier peut être un CSV ou un fichier Excel (.xlsx, .xls). Si aucun fichier n'est donné, demande à l'utilisateur de le glisser dans la conversation.
 
 ## Avant de commencer
 
-1. Tu lis `${CLAUDE_PLUGIN_DATA}/config.md`. Si elle n'existe pas, tu lances le skill demarrer, puis tu reprends ici.
+1. Tu cherches le fichier `config-boost-prospection.md` à la racine du dossier de travail (le dossier ouvert pour cette session).
+   - Aucun dossier de travail ouvert : tu demandes à l'utilisateur d'ouvrir son dossier de prospection, et tu t'arrêtes là.
+   - Le fichier n'existe pas : tu lances le skill demarrer, puis tu reprends ici.
 2. Tu lis les règles d'ajout `${CLAUDE_PLUGIN_ROOT}/regles/ajout-hubspot.md`.
 
 ## Étape 1 : lire le fichier
@@ -27,7 +29,7 @@ Une entreprise est identifiée par son SIREN s'il y en a un, sinon par son nom.
 
 ## Étape 2 : le fichier de suivi
 
-Le suivi s'appelle comme le fichier d'entrée, avec `_suivi` avant l'extension (par exemple `export-pappers_suivi.csv`), dans le même dossier.
+Le suivi est toujours un fichier CSV, rangé à la racine du dossier de travail (jamais à côté du fichier déposé, qui peut disparaître à la fin de la conversation). Il porte le nom du fichier d'entrée suivi de `_suivi.csv` : par exemple `export-pappers_suivi.csv` pour `export-pappers.xlsx`.
 
 - **Il n'existe pas** : tu le crées, encodé en UTF-8 avec BOM, avec le séparateur « ; » et cette ligne d'en-tête :
 
@@ -51,7 +53,7 @@ Puis, si ce n'est pas déjà fait dans cette session, tu demandes une seule fois
 
 Tu traites les entreprises par groupes de 3 :
 
-1. Avec l'outil Agent, tu lances 3 sous-agents `boost-prospection:chercheur-prospect` en même temps (trois appels dans un seul message), un par entreprise, avec son nom et les infos déjà connues du fichier (SIREN, ville, site, dirigeant).
+1. Avec l'outil Agent, tu lances 3 sous-agents `boost-prospection:chercheur-prospect` en même temps (trois appels dans un seul message), un par entreprise, avec son nom, les infos déjà connues du fichier (SIREN, ville, site, dirigeant), les infos à trouver et le réglage Apollo de la config.
 2. Quand les 3 fiches sont revenues, tu les traites une par une :
    - **TROUVÉ** : tu l'ajoutes dans HubSpot en suivant les règles d'ajout. Statut « ajouté ».
    - **ARRÊTÉ** : statut « arrêté », avec la raison.
