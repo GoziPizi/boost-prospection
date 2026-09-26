@@ -1,5 +1,5 @@
 {
-  "name": "hubspot-apollo-agent",
+  "name": "boost-prospection",
   "description": "Permet de récollecter les informations d'un prospect et les stocker dans Hubspot.",
   "version": "1.0.1",
   "author": {
@@ -7,4 +7,4 @@
     "email": "quentin@boost-ia.fr",
     "url": "https://boost-ia.fr"
   }
-} 
+}

@@ -1,0 +1,15 @@
+{
+  "name": "boost-ia",
+  "description": "Les plugins Claude Code de Boost IA.",
+  "owner": {
+    "name": "Quentin GOURDEL",
+    "email": "quentin@boost-ia.fr"
+  },
+  "plugins": [
+    {
+      "name": "boost-prospection",
+      "source": "./",
+      "description": "Trouve le dirigeant d'une entreprise et ses coordonnées, puis l'ajoute dans HubSpot."
+    }
+  ]
+}
