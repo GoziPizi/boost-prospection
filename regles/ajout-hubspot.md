@@ -1,6 +1,6 @@
 # Règles d'ajout dans HubSpot
 
-Ces règles sont suivies par les skills prospecter et prospecter-lot, pour chaque fiche au statut TROUVÉ renvoyée par le sous-agent chercheur-prospect.
+Ces règles sont suivies par les skills prospecter et prospecter-lot, pour chaque fiche au statut TROUVÉ renvoyée par le sous-agent `hubspot-apollo-agent:chercheur-prospect`.
 
 ## Les confirmations
 

@@ -7,7 +7,7 @@ disable-model-invocation: true
 
 Les entreprises à prospecter : $ARGUMENTS
 
-Si la liste est vide, demande-la à l'utilisateur. Si l'utilisateur donne un fichier CSV, dis-lui d'utiliser plutôt `/boost-prospection:prospecter-lot`.
+Si la liste est vide, demande-la à l'utilisateur. Si l'utilisateur donne un fichier CSV, dis-lui d'utiliser plutôt `/hubspot-apollo-agent:prospecter-lot`.
 
 ## Avant de commencer
 
@@ -19,7 +19,7 @@ Si la liste est vide, demande-la à l'utilisateur. Si l'utilisateur donne un fic
 
 Tu traites les entreprises une par une.
 
-1. Tu lances le sous-agent chercheur-prospect avec le nom de l'entreprise. Tu ne fais aucune recherche toi-même.
+1. Avec l'outil Agent, tu lances le sous-agent `hubspot-apollo-agent:chercheur-prospect` en lui donnant le nom de l'entreprise. Tu ne fais aucune recherche toi-même.
 2. Fiche ARRÊTÉ : tu notes la raison et tu passes à l'entreprise suivante.
 3. Fiche TROUVÉ : tu l'ajoutes dans HubSpot en suivant les règles d'ajout, puis tu écris : « Nouvelle transaction créée : [entreprise], avec le contact : [prénom nom] ».
 
