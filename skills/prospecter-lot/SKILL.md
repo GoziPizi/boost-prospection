@@ -45,7 +45,7 @@ Tu annonces en quelques lignes :
 
 - le nombre d'entreprises à traiter, et celles déjà traitées s'il y en a
 - le temps estimé (environ 1 minute par entreprise, divisé par 3 grâce au traitement en parallèle)
-- si Apollo est activé : jusqu'à 1 crédit Apollo par entreprise sans email sur son site
+- si Apollo est activé : jusqu'à 2 crédits Apollo par entreprise (un par dirigeant sans email sur le site)
 
 Puis, si ce n'est pas déjà fait dans cette session, tu demandes une seule fois avec l'outil AskUserQuestion : « Je crée les transactions et les contacts dans HubSpot sans te demander de confirmation pour cette session ? ». Tu ne reposes jamais cette question pendant la session.
 
