@@ -1,0 +1,8 @@
+# Réglages personnels de Claude Code
+.claude/settings.local.json
+
+# Liste de tests (usage personnel)
+tests.txt
+
+# Fichiers de test et de suivi de prospection
+*_suivi.csv
