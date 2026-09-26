@@ -30,6 +30,8 @@ Tu appliques le choix fait par l'utilisateur au début de la session :
 
    3. Tu associes le contact à la transaction.
 
+4. Si « Page de contact » fait partie des infos à trouver de la config et que la fiche contient son URL, tu crées une note sur la transaction avec ce texte : « Page de contact : [URL] ».
+
 Tu ne mets jamais l'email général sur un contact. Un champ vide dans la fiche reste vide dans HubSpot.
 
 ## Le résultat

@@ -40,7 +40,7 @@ Tu lui fais choisir les autres infos (plusieurs choix possibles) :
 - Email
 - Téléphone direct
 - LinkedIn du dirigeant
-- Page de contact
+- Page de contact (ajoutée en note sur la transaction HubSpot)
 - Standard
 
 ## Étape 4 : Apollo

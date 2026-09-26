@@ -9,7 +9,7 @@ Ce fichier est lu par les skills prospecter et prospecter-lot. Garde-le à la ra
 ## Infos à trouver
 Le dirigeant est toujours cherché. Une info par ligne.
 - Dirigeant
-- [info choisie parmi : Email, Téléphone direct, LinkedIn du dirigeant, Page de contact, Standard]
+- [info choisie parmi : Email, Téléphone direct, LinkedIn du dirigeant, Page de contact (ajoutée en note sur la transaction), Standard]
 
 ## Apollo
 - Utiliser Apollo si pas d'email : [oui | non]
