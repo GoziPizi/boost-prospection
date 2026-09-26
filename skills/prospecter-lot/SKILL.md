@@ -31,7 +31,9 @@ Le suivi s'appelle comme le fichier d'entrée, avec `_suivi` avant l'extension (
 
 - **Il n'existe pas** : tu le crées, encodé en UTF-8 avec BOM, avec le séparateur « ; » et cette ligne d'en-tête :
 
-  `SIREN;Entreprise;Statut;Prénom;Nom;Email;Email général;Téléphone;LinkedIn;Lien HubSpot;Raison;Date`
+  `SIREN;Entreprise;Statut;Dirigeant 1;Fonction 1;Email 1;Dirigeant 2;Fonction 2;Email 2;Email général;Standard;Lien HubSpot;Raison;Date`
+
+  Les colonnes « Dirigeant » contiennent le prénom et le nom. Si l'entreprise n'a qu'un dirigeant, les colonnes du dirigeant 2 restent vides.
 
 - **Il existe** : tu le lis. Les entreprises au statut « ajouté » ou « arrêté » sont déjà traitées : tu les sautes. Celles au statut « erreur » sont retraitées. Si une entreprise apparaît plusieurs fois, seule la dernière ligne compte.
 

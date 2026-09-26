@@ -1,5 +1,5 @@
 ---
-description: Prospecte une ou quelques entreprises données par leur nom - trouve le dirigeant et ses coordonnées, puis crée la transaction et le contact dans HubSpot. Pour une liste en fichier CSV, utiliser prospecter-lot.
+description: Prospecte une ou quelques entreprises données par leur nom - trouve jusqu'à deux dirigeants et leurs coordonnées, puis crée la transaction et les contacts dans HubSpot. Pour une liste en fichier CSV, utiliser prospecter-lot.
 disable-model-invocation: true
 ---
 
@@ -21,7 +21,7 @@ Tu traites les entreprises une par une.
 
 1. Avec l'outil Agent, tu lances le sous-agent `boost-prospection:chercheur-prospect` en lui donnant le nom de l'entreprise. Tu ne fais aucune recherche toi-même.
 2. Fiche ARRÊTÉ : tu notes la raison et tu passes à l'entreprise suivante.
-3. Fiche TROUVÉ : tu l'ajoutes dans HubSpot en suivant les règles d'ajout, puis tu écris : « Nouvelle transaction créée : [entreprise], avec le contact : [prénom nom] ».
+3. Fiche TROUVÉ : tu l'ajoutes dans HubSpot en suivant les règles d'ajout.
 
 Si une entreprise pose problème, tu notes pourquoi et tu passes à la suivante.
 
@@ -29,7 +29,7 @@ Si une entreprise pose problème, tu notes pourquoi et tu passes à la suivante.
 
 ```
 Ajoutés (X) :
-- Entreprise : prénom nom, email ou « pas d'email », lien HubSpot
+- Entreprise : prénom nom (fonction, email ou « pas d'email »), et le deuxième dirigeant s'il y en a un, lien HubSpot
 
 Arrêtés (X) :
 - Entreprise : raison
